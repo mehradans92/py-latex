@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{booktabs}  
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{pdflscape}
+\begin{document}
+
+
+\begin{landscape}
+
+\begin{longtable}{m{1.4cm} m{0.8\textwidth} m{0.4\textwidth} m{1.2cm}}  
+\caption{List of SMILES modifications and docking scores} \label{tab:smiles} \\
+\toprule
+\textbf{Iteration} & \textbf{SMILES} & \textbf{Modification} & \textbf{Docking Score} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Iteration} & \textbf{SMILES} & \textbf{Modification} & \textbf{Docking Score} \\
+\midrule
+\endhead
+
+\midrule \multicolumn{4}{r}{\textit{Continued on the next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\input{|python3 process_csv.py}
+
+\end{longtable}
+
+\end{landscape}
+
+\end{document}
